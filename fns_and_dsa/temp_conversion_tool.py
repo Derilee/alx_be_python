@@ -9,13 +9,16 @@ def convert_to_fahrenheit(celsius):
 
 
 from fns_and_dsa import convert_to_celsius, convert_to_fahrenheit
-Temperature = float(input("Enter the temperature to convert: "))
-scale = input("Is this temperature in Celsius or Fahrenheit? (C/F): ")
-if scale == "C":
-    result = convert_to_fahrenheit(Temperature)
-    print(f"{Temperature}°C is {result}°F")
-elif scale == "F":
-    result = convert_to_celsius(Temperature)
-    print(f"{Temperature}°F is {result}°C")
-else:
+try:
+    Temperature = float(input("Enter the temperature to convert: "))
+    scale = input("Is this temperature in Celsius or Fahrenheit? (C/F): ").strip().upper()
+    if scale == "C":
+        result = convert_to_fahrenheit(Temperature)
+        print(f"{Temperature}°C is {result}°F") 
+    elif scale == "F":
+        result = convert_to_celsius(Temperature)
+        print(f"{Temperature}°F is {result}°C") 
+    else:
+        print("invalid selection. Please enter C or F")
+except ValueError:
     print("Invalid temperature. Please enter a numeric value")
