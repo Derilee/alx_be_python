@@ -31,9 +31,8 @@ class Library:
         for newBook in self.books:
             if newBook.title == book.title and newBook.author == book.author:
                 return False
-            else:
-                self.books.append(book)
-                return True
+        self.books.append(book)
+        return True
 
 
     def list_books(self):
